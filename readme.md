@@ -1,6 +1,9 @@
 Description
 This is a Ruby Sinatra app project titled 'Haversack' - named after the Dungeons & Dragons item, which is like an ever-expanding backpack. This app will let users sign up for an account and keep track of what items their characters have.
 
+ADD VIDEO DEMO
+ADD BLOG POST
+
 Created With
 Ruby (current version)
 Sinatra and Active Records (frameworks)
@@ -18,7 +21,7 @@ Contribution
 Bug reports and pull requests are welcome on GitHub at https://github.com/wonderfulkasey/haversack. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 Stretch Goal/Future Improvements
-Add http://www.dnd5eapi.co/ to look up items/descriptions and store them.
+Add https://open5e.com/ to look up items/descriptions and store them.
 
 License
 The project is available as open source under the terms of the MIT License.
