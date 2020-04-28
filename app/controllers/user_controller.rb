@@ -5,7 +5,7 @@ class UserController < AppController
     if !session[:user_id]
       erb :'users/create_user'
     else
-      redirect to('/expenses')
+      redirect to('/items')
     end
   end
 
@@ -16,7 +16,7 @@ class UserController < AppController
       erb :'users/create_user'
     else
       session[:user_id] = @user.id
-      redirect to('/expenses')
+      redirect to('/items')
     end
   end
 
@@ -24,7 +24,7 @@ class UserController < AppController
     if !session[:user_id]
       erb :'users/login'
     else
-      redirect to('/expenses')
+      redirect to('/items')
     end
   end
 
@@ -32,7 +32,7 @@ class UserController < AppController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect to('/expenses')
+      redirect to('/items')
     else
       @errors = "Invalid username or password."
       erb :'users/login'
