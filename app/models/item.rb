@@ -2,6 +2,6 @@ class Item < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :character, :description, :date, presence: true
+  validates :title, :character, :description, :date, presence: true
 
 end
