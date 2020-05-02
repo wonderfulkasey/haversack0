@@ -7,7 +7,6 @@ class AppController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    #Need to learn how to set session_secret
     set :session_secret, "timetoduel" #ENV.fetch('SESSION_SECRET')
   end
 
