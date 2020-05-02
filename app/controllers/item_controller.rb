@@ -1,6 +1,5 @@
 class ItemController < AppController
 
-  #skeleton added
   get '/items' do
     if logged_in?
       @items = current_user.items
@@ -34,7 +33,7 @@ class ItemController < AppController
   end
 
   get '/items/:id' do
-    @item = item.find(params[:id])
+    @item = Item.find(params[:id])
     if logged_in? && @item.user == current_user
       erb :'items/show_item'
     else
@@ -43,9 +42,9 @@ class ItemController < AppController
   end
 
   get '/items/:id/edit' do
-    @item = item.find(params[:id])
+    @item = Item.find(params[:id])
     if logged_in? && @item.user == current_user
-      @item = item.find(params[:id])
+      @item = Item.find(params[:id])
       @user = User.find(session[:user_id])
       erb :'items/update_item'
     else
@@ -54,11 +53,11 @@ class ItemController < AppController
   end
 
   patch '/items/:id' do
-    @item = item.find(params[:id])
-    @item.vendor = params[:vendor]
+    @item = Item.find(params[:id])
+    @item.title = params[:title]
     @item.description = params[:description]
     @item.date = params[:date]
-    @item.total = params[:total]
+    @item.character = params[:character]
     if !@item.save
       @errors = @item.errors.full_messages
       erb :'/items/update_item'
