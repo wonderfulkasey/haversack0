@@ -3,7 +3,7 @@ class UserController < AppController
   #added code skeleton
  get '/signup' do
     if !session[:user_id]
-      erb :'users/create_user'
+      erb :'users/new_user'
     else
       redirect to('/items')
     end
@@ -13,7 +13,7 @@ class UserController < AppController
     @user = User.new(params)
     if !@user.save
       @errors = @user.errors.full_messages
-      erb :'users/create_user'
+      erb :'users/new_user'
     else
       session[:user_id] = @user.id
       redirect to('/items')
@@ -46,7 +46,7 @@ class UserController < AppController
       session.destroy
       redirect to('/')
     else
-      rediect to('/')
+      redirect to('/')
     end
   end
 
