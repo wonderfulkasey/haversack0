@@ -2,10 +2,10 @@
 require_relative "spec_helper"
 
 def app
-  ApplicationController
+  app_controller
 end
 
-describe ApplicationController do
+describe app_controller do
   it "responds with a welcome message" do
     get '/'
     expect(last_response.status).to eq(200)

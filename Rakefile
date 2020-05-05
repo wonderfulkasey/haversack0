@@ -1,8 +1,8 @@
 require_relative './config/environment'
 require 'sinatra/activerecord/rake'
 
-def reload
-  load_all 'app/models'
+task :console do
+  Pry.start
 end
 
 
