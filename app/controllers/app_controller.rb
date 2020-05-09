@@ -16,7 +16,7 @@ class AppController < Sinatra::Base
     else
       erb :index
     end
-
+end
 
   helpers do
     def logged_in?
@@ -31,5 +31,4 @@ class AppController < Sinatra::Base
       current_user.id == id
     end
   end
-end
 end
